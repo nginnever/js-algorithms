@@ -1,6 +1,6 @@
 'use strict'
 
-var table = new hashTable({
+let table = new hashTable({
   voxelot: {
     name: 'voxelot',
     title:'rank 1 idiot',
@@ -30,7 +30,7 @@ function hashTable(obj) {
     }
   }
 
-  this.setItem = function(key, value) {
+  this.setItem = (key, value) => {
     var prev = undefined
     if(this.hasItem(key)) {
       prev = this.items[key]
@@ -40,11 +40,11 @@ function hashTable(obj) {
     this.items[key] = value
   }
 
-  this.hasItem = function(key) {
+  this.hasItem = (key) => {
     return this.items.hasOwnProperty(key)
   }
 
-  this.removeItem = function(key) {
+  this.removeItem = (key) => {
     if(this.hasItem(key)) {
       var prev = this.items[key]
       delete this.items[key]
@@ -55,7 +55,7 @@ function hashTable(obj) {
     }
   }
 
-  this.keys = function() {
+  this.keys = () => {
     var keys = []
     for(var k in this.items) {
       if(this.hasItem(k)) {
@@ -65,7 +65,7 @@ function hashTable(obj) {
     return keys
   }
 
-  this.values = function() {
+  this.values = () => {
     var vals = []
     for(var k in this.items) {
       if(this.hasItem[k]) {
@@ -75,7 +75,7 @@ function hashTable(obj) {
     return vals
   }
 
-  this.each =function(fn) {
+  this.each = (fn) => {
     for(var k in this.items) {
       if(this.hasItem(k)) {
         fn(k, this.items[k])
@@ -83,7 +83,7 @@ function hashTable(obj) {
     }
   }
 
-  this.clear = function() {
+  this.clear = () => {
     this.items = {}
     this.length = 0
   }
