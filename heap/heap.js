@@ -17,10 +17,17 @@
 //  __|__    __|__  __|__
 //  37  26   76 32  74 89
 
-//var arr = [8, 18, 29, 20, 28, 29, 66, 37, 24, 76, 32, 74, 89]
+//var arr = [8, 18, 29, 20, 28, 29, 66, 37, 26, 76, 32, 74, 89]
 var arr = []
 insert(arr, 10)
-insert(arr, 7)
+insert(arr, 29)
+insert(arr, 3)
+insert(arr, 45)
+insert(arr, 23)
+insert(arr, 44)
+insert(arr, 2)
+insert(arr, 16)
+insert(arr, 32)
 
 // insert takes the height of the tree steps time to complete
 // with log2n level to the tree this is O(log2n) time
@@ -44,6 +51,7 @@ function insert(arr, num) {
   recurse()
 
   function recurse() {
+    if (parent === undefined){return}
     if(child >= parent){
       return arr
     }
@@ -65,6 +73,11 @@ function insert(arr, num) {
 
     return recurse(child, parent)
   }
+}
+
+// Convert A[0,1,...,n-1] into a max-heap
+function maxHeapify(arr){
+
 }
 
 // function delete() {
