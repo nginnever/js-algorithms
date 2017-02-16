@@ -7,8 +7,8 @@
 // node at child
 //  - parent is at math.floor((c-1)/2)
 
-//              8
-//        ______|________
+//                8
+//        ________|_______
 //        18            29
 //     ___|___        ___|___
 //    20      28      39    66
@@ -19,11 +19,13 @@ var arr = [8, 18, 29, 20, 28, 29, 66, 37, 24, 76, 32, 74, 89]
 
 insert(arr, 10)
 
+// insert takes the height of the tree steps time to complete
+// with log2n level to the tree this is O(log2n) time
 function insert(arr, num) {
   console.log('Heap')
   console.log(arr)
   console.log('inserting: '+num)
-  arr.push(10)
+  arr.push(num)
   console.log(arr)
 
   var childPos = arr.length-1
@@ -39,7 +41,7 @@ function insert(arr, num) {
   recurse()
 
   function recurse() {
-    if(child > parent){
+    if(child >= parent){
       return arr
     }
     console.log('Child is less than parent, swapping...')
@@ -62,7 +64,9 @@ function insert(arr, num) {
   }
 }
 
-function delete() {
-  
-}
+insert(arr, 7)
+
+// function delete() {
+
+// }
 
