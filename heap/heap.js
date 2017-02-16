@@ -1,4 +1,6 @@
 'use strict'
+// To change max heap to min heap, just switch the relational 
+// operator in the recursive boolean
 
 // node at parent
 //  - left child is at 2p+1
@@ -15,9 +17,10 @@
 //  __|__    __|__  __|__
 //  37  26   76 32  74 89
 
-var arr = [8, 18, 29, 20, 28, 29, 66, 37, 24, 76, 32, 74, 89]
-
+//var arr = [8, 18, 29, 20, 28, 29, 66, 37, 24, 76, 32, 74, 89]
+var arr = []
 insert(arr, 10)
+insert(arr, 7)
 
 // insert takes the height of the tree steps time to complete
 // with log2n level to the tree this is O(log2n) time
@@ -63,8 +66,6 @@ function insert(arr, num) {
     return recurse(child, parent)
   }
 }
-
-insert(arr, 7)
 
 // function delete() {
 
