@@ -11,9 +11,9 @@ function isPalindrome(word) {
 
   var rword = ''
 
-  for(var j=0; j<word.length; j++) {
-    rword += s.pop()
-  }
+ while (s.dataStore.length > 0) {
+  rword += s.pop()
+ }
 
   if(word === rword) {
     return true
